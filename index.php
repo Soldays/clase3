@@ -9,14 +9,14 @@
 <body>
     <h1>Compra de boletos</h1>
     <h2> Formulario de ventas</h2>
-    <form class="boletos" action="guardar.php" method="post">
-        <label for="ticket">Ticket</label>
-        <input type="number" id="ticket" name="ticket" maxlength="6" required></input><br>
-        <br>
-        <label for="pelicula">Pelicula</label>
-        <input for="pelicula" id="pelicula" name="pelicula" maxlength="6" required></input><br><br>
+    <form class="boleto" action="guardar.php" method="POST">
+    <label for="ticket">Ticket</label>
+    <input type="number" id="ticket" name="ticket" maxlength="6" required><br><br>
 
-        <button class="submit" type="submit">enviar boletos</button>
-    </form>
+    <label for="pelicula">Pelicula</label>
+    <input type="text" id="pelicula" name="pelicula" maxlength="40" required><br><br>
+
+    <button class="submit" type="submit">Enviar boletos</button>
+</form>
 </body>
 </html>

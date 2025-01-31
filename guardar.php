@@ -1,11 +1,18 @@
 <?php 
-    $conexion = new mysqli("localhost", "root", "", "cines");
+    include("abre.php");
+    $ticket = $_POST['ticket'];
+    $pelicula = $_POST['pelicula'];
 
-    if ($conexion->connect_error) {
-        echo "Algo salió mal:( " . $conexion->connect_error;
-        // $conexion->connect_error para comprobar si hubo un
-        // error en la conexión. Si la propiedad contiene un valor, significa que hubo un error.
+    //aca checa bien el nombre de la bae de datos 
+    $consulta = "INSERT INTO taquilla(ticket, pelicula) 
+    VALUES ('$ticket', '$pelicula')";
+    
+//usa la sentencia conexion
+    if ($conexion->query($consulta) === TRUE) {
+        echo "Registro insertado correctamente";
+        header("Location: index.php");
     } else {
-        echo "La gestión fue exitosa :D";
+        echo "Error: " . $conexion->error;
     }
+
 ?>
